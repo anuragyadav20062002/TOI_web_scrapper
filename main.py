@@ -1,6 +1,8 @@
 import requests
 from bs4 import BeautifulSoup
+
 def timesofindia():
+    
     url = "https://timesofindia.indiatimes.com/home/headlines"
     page_request = requests.get(url)
     data = page_request.content
@@ -14,6 +16,7 @@ def timesofindia():
                     counter = counter + 1
                     print(str(counter) + " - https://timesofindia.indiatimes.com" + litag.find('a')['href'])
                     #print(str(counter) + "." + litag.text + " - https://timesofindia.indiatimes.com" + litag.find('a')['href'])
+
 
 if __name__ == "__main__":
     timesofindia()
